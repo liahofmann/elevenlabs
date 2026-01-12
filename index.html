@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElevenLabs SDR Exercise - Trade Republic Outbound Sequence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(1rem);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="min-h-screen">
+        <!-- Navigation - White -->
+        <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-200">
+            <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-50"></div>
+            <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="flex gap-[3px]">
+                        <div class="w-[3px] h-5 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
+                        <div class="w-[3px] h-5 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></div>
+                    </div>
+                    <span class="text-sm font-medium tracking-tight ml-2">SDR Exercise</span>
+                </div>
+                <a href="https://www.linkedin.com/in/lia-hofmann-2945a2229/" target="_blank" rel="noopener noreferrer" class="text-xs text-neutral-500 hover:text-purple-600 transition-colors flex items-center gap-1">
+                    LinkedIn
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Hero Section - Black -->
+        <section class="pt-32 pb-20 px-6 bg-black text-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="max-w-2xl">
+                    <p class="text-xs text-purple-400 uppercase tracking-widest mb-4 font-medium">ElevenLabs · SDR Germany</p>
+                    <h1 class="text-4xl md:text-5xl font-medium tracking-tight mb-6 leading-[1.1]">
+                        Trade Republic<br>
+                        <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Outbound Sequence</span>
+                    </h1>
+                    <p class="text-neutral-300 text-lg mb-10 leading-relaxed">
+                        A 3-step outreach strategy targeting engineering leadership, built around Trade Republic's public commitment to rethink customer support in 2026.
+                    </p>
+
+                    <!-- Loom Embed Placeholder -->
+                    <div class="aspect-video bg-gradient-to-br from-neutral-800 via-purple-900/30 to-blue-900/30 rounded-xl border border-neutral-700 flex items-center justify-center mb-6 overflow-hidden relative group cursor-pointer">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5"></div>
+                        <div class="relative z-10 text-center">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center mb-4 mx-auto group-hover:scale-105 transition-transform shadow-lg shadow-purple-500/20">
+                                <div class="w-0 h-0 border-l-[20px] border-l-white border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1"></div>
+                            </div>
+                            <p class="text-sm text-neutral-400">Watch 60-second intro</p>
+                        </div>
+                        <p class="absolute bottom-4 left-4 text-[10px] text-neutral-500 uppercase tracking-wider">Loom embed goes here</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Target Section - White -->
+        <section class="py-20 px-6 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <p class="text-xs text-cyan-600 uppercase tracking-widest mb-8 font-medium">Target</p>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Company Card -->
+                    <div class="bg-gradient-to-br from-white to-blue-50/50 border border-neutral-200 rounded-xl p-6 hover:border-blue-200 transition-colors">
+                        <div class="flex items-center gap-3 mb-6">
+                            <!-- Trade Republic Logo -->
+                            <div class="w-10 h-10 rounded-lg bg-white border border-neutral-200 flex items-center justify-center overflow-hidden">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Trade_Republic_logo.svg/2560px-Trade_Republic_logo.svg.png" alt="Trade Republic" class="w-full h-full object-contain p-1">
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-neutral-900">Trade Republic</h3>
+                                <p class="text-xs text-neutral-500">Germany's largest neobroker</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-xs text-blue-600 uppercase tracking-wider mb-2 font-medium">Why them</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start gap-2 text-sm text-neutral-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500 mt-0.5 shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                        8M customers (doubled in 2025), 17 EU markets
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-neutral-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500 mt-0.5 shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                        Customer support is a public pain point — VZBV complaints up 133%
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-neutral-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500 mt-0.5 shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                        BaFin-regulated — compliance matters
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="text-xs text-blue-600 uppercase tracking-wider mb-2 font-medium">Why now</p>
+                                <p class="text-sm text-neutral-600">
+                                    Trade Republic publicly committed to "rethinking customer support" in 2026. The timing window is open.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Buyer Card -->
+                    <div class="bg-gradient-to-br from-white to-purple-50/50 border border-neutral-200 rounded-xl p-6 hover:border-purple-200 transition-colors">
+                        <div class="flex items-center gap-3 mb-6">
+                            <!-- Max Fischer Profile Picture -->
+                            <div class="w-10 h-10 rounded-lg bg-neutral-200 flex items-center justify-center overflow-hidden ring-2 ring-purple-500/20">
+                                <img src="https://media.licdn.com/dms/image/v2/D4E03AQE8WYIb8nO_Rg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728373547049?e=1741824000&v=beta&t=Yz0JxWcEpY4rxWRTIp8Xy0wZgEJKBsJAD8oLXV-f0Zs" alt="Max Fischer" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-neutral-900">Max Fischer</h3>
+                                <p class="text-xs text-neutral-500">Director Engineering · Trade Republic</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-xs text-purple-600 uppercase tracking-wider mb-2 font-medium">Why engineering</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start gap-2 text-sm text-neutral-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-500 mt-0.5 shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                        ElevenLabs is API-first — engineering evaluates technical fit
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-neutral-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-500 mt-0.5 shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                        Build vs. buy decision sits with engineering
+                                    </li>
+                                    <li class="flex items-start gap-2 text-sm text-neutral-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-500 mt-0.5 shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                        SOC2, GDPR, latency requirements need technical validation
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p class="text-xs text-purple-600 uppercase tracking-wider mb-2 font-medium">Why Max specifically</p>
+                                <p class="text-sm text-neutral-600">
+                                    Ex-VP Engineering at Klarna. Scaled fintech support before. Profile shows strategic thinking, not just execution.
+                                </p>
+                            </div>
+
+                            <div class="pt-3 border-t border-neutral-200">
+                                <p class="text-xs text-purple-600 uppercase tracking-wider mb-3 font-medium">Contact details</p>
+                                <div class="space-y-2">
+                                    <a href="https://www.linkedin.com/in/fischermax/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-neutral-600 hover:text-purple-600 transition-colors">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0A66C2]"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                        linkedin.com/in/fischermax
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-400"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    </a>
+                                    <div class="flex items-center gap-2 text-sm text-neutral-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-500"><rect x="3" y="4" width="18" height="16" rx="2" ry="2"></rect><polyline points="3 9 12 13 21 9"></polyline></svg>
+                                        max.fischer@traderepublic.com
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-neutral-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-500"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                        +46 73 071 7058
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <span class="inline-flex items-center gap-1.5 text-[10px] text-purple-600 bg-purple-500/10 px-2 py-1 rounded font-medium">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                        Verified via Lemlist
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sequences Section - Black -->
+        <section class="py-20 px-6 bg-black text-white">
+            <div class="max-w-5xl mx-auto">
+                <p class="text-xs text-pink-400 uppercase tracking-widest mb-4 font-medium">Outreach Sequences</p>
+                <p class="text-neutral-300 mb-10 max-w-xl">
+                    Two approaches depending on available signals. Click to expand and see the full sequence.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Cold Outreach Panel -->
+                    <div id="cold-panel" class="border rounded-xl transition-all duration-300 cursor-pointer bg-neutral-900 border-neutral-700 hover:border-cyan-500 hover:shadow-md" onclick="toggleSequence('cold')">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-cyan-500/10">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-medium text-white">Cold Outreach</h3>
+                                        <p class="text-xs text-neutral-400">No prior engagement signal</p>
+                                    </div>
+                                </div>
+                                <svg id="cold-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400 transition-transform duration-300"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </div>
+
+                            <div class="flex items-center gap-4 text-xs text-neutral-400">
+                                <span class="flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><rect x="3" y="4" width="18" height="16" rx="2" ry="2"></rect><polyline points="3 9 12 13 21 9"></polyline></svg>
+                                    2 emails
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0A66C2]"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                    1 LinkedIn
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                    ~10 days
+                                </span>
+                            </div>
+                        </div>
+
+                        <div id="cold-content" class="hidden px-6 pb-6 pt-2 border-t border-neutral-700">
+                            <div class="mt-6 space-y-8">
+                                <!-- Step 1 -->
+                                <div class="fade-in">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/10 border border-cyan-500/20">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><rect x="3" y="4" width="18" height="16" rx="2" ry="2"></rect><polyline points="3 9 12 13 21 9"></polyline></svg>
+                                        </div>
+                                        <span class="text-xs font-mono text-cyan-400">Day 1</span>
+                                    </div>
+                                    <div class="ml-4 pl-7 border-l border-cyan-500/20 pb-8">
+                                        <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-4 shadow-sm">
+                                            <p class="text-xs text-neutral-200 mb-3 font-medium">Subject: Support at scale</p>
+                                            <pre class="text-xs text-neutral-400 whitespace-pre-wrap font-sans leading-relaxed">Hi Max,
+
+Trade Republic doubling to 8M customers is impressive. The VZBV complaint data and your team's public commitment to rethink support in 2026 suggests you're already working on what comes next.
+
+One angle worth exploring: ElevenLabs is powering customer support for regulated enterprises across Europe—multilingual, sub-100ms latency, built for compliance-heavy environments. Similar constraints to what you're navigating.
+
+Worth a conversation?
+
+Best,
+Lia</pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="fade-in">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="flex items-center justify-center w-8 h-8 rounded-full bg-[#0A66C2]/10 border border-[#0A66C2]/20">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0A66C2]"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                        </div>
+                                        <span class="text-xs font-mono text-cyan-400">3-4 days later</span>
+                                    </div>
+                                    <div class="ml-4 pl-7 border-l border-cyan-500/20 pb-8">
+                                        <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-4 shadow-sm">
+                                            <p class="text-xs text-neutral-200 mb-3 font-medium">Connection Request</p>
+                                            <pre class="text-xs text-neutral-400 whitespace-pre-wrap font-sans leading-relaxed">Hi Max — Trade Republic's commitment to rethinking support in 2026 caught my attention. Working on something at ElevenLabs that might be relevant. Worth connecting?</pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 3 -->
+                                <div class="fade-in">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="flex items-center justify-center w-8 h-8 rounded-full bg-cyan-500/10 border border-cyan-500/20">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><rect x="3" y="4" width="18" height="16" rx="2" ry="2"></rect><polyline points="3 9 12 13 21 9"></polyline></svg>
+                                        </div>
+                                        <span class="text-xs font-mono text-cyan-400">5-6 days later</span>
+                                    </div>
+                                    <div class="ml-4 pl-7 border-l border-cyan-500/20">
+                                        <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-4 shadow-sm">
+                                            <p class="text-xs text-neutral-200 mb-3 font-medium">Subject: Adecco's support model</p>
+                                            <pre class="text-xs text-neutral-400 whitespace-pre-wrap font-sans leading-relaxed">Hi Max,
+
+One proof point before I go quiet: Adecco cut average handle time by 40% using ElevenLabs for customer-facing voice—while staying compliant across EU markets.
+
+If scaling support without scaling headcount is on your radar, happy to share how they structured it. If the timing isn't right now but this becomes relevant later, I'm happy to pick it back up.
+
+Best,
+Lia</pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Signal-Based Panel -->
+                    <div id="signal-panel" class="border rounded-xl transition-all duration-300 cursor-pointer bg-neutral-900 border-neutral-700 hover:border-pink-500 hover:shadow-md" onclick="toggleSequence('signal')">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-pink-500/10">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-400"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-medium text-white">Signal-Based</h3>
+                                        <p class="text-xs text-neutral-400">Engaged with ElevenLabs content</p>
+                                    </div>
+                                </div>
+                                <svg id="signal-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-400 transition-transform duration-300"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </div>
+
+                            <div class="flex items-center gap-4 text-xs text-neutral-400">
+                                <span class="flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0A66C2]"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                    LinkedIn-first
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-400"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>
+                                    Conditional logic
+                                </span>
+                                <span class="flex items-center gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-neutral-500"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                    ~10 days
+                                </span>
+                            </div>
+                        </div>
+
+                        <div id="signal-content" class="hidden px-6 pb-6 pt-2 border-t border-neutral-700">
+                            <div class="mt-6 mb-4 p-3 bg-pink-900/30 rounded-lg border border-pink-500/30">
+                                <p class="text-[10px] text-pink-400 uppercase tracking-wider mb-1 font-medium">Trigger Signal</p>
+                                <p class="text-xs text-neutral-300">
+                                    Max engaged with <a href="https://www.linkedin.com/posts/oscarlance_el-nuevo-negocio-de-la-voz-para-la-ia-elevenlabs-activity-7406300669806260224-X_su" target="_blank" rel="noopener noreferrer" class="text-pink-400 underline hover:no-underline font-medium" onclick="event.stopPropagation()">Oscar Lanzendorf's LinkedIn post</a> about ElevenLabs' enterprise support work (Adecco case study mention).
+                                </p>
+                            </div>
+                            <div class="mt-6 space-y-8">
+                                <!-- Step 1 -->
+                                <div class="fade-in">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="flex items-center justify-center w-8 h-8 rounded-full bg-[#0A66C2]/10 border border-[#0A66C2]/20">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0A66C2]"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                        </div>
+                                        <span class="text-xs font-mono text-pink-400">Day 1</span>
+                                    </div>
+                                    <div class="ml-4 pl-7 border-l border-pink-500/20 pb-8">
+                                        <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-4 shadow-sm">
+                                            <p class="text-xs text-neutral-200 mb-3 font-medium">Connection Request</p>
+                                            <pre class="text-xs text-neutral-400 whitespace-pre-wrap font-sans leading-relaxed">Hi Max — saw you liked Oscar's post about ElevenLabs' work with enterprise support teams. Given what Trade Republic is navigating, thought it'd be worth connecting.</pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 2 -->
+                                <div class="fade-in">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="flex items-center justify-center w-8 h-8 rounded-full bg-pink-500/10 border border-pink-500/20">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-400"><rect x="3" y="4" width="18" height="16" rx="2" ry="2"></rect><polyline points="3 9 12 13 21 9"></polyline></svg>
+                                        </div>
+                                        <span class="text-xs font-mono text-pink-400">3-4 days later</span>
+                                    </div>
+                                    <div class="ml-4 pl-7 border-l border-pink-500/20 pb-8">
+                                        <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-4 shadow-sm">
+                                            <p class="text-xs text-neutral-200 mb-3 font-medium">Subject: Oscar's post on enterprise voice agents</p>
+                                            <pre class="text-xs text-neutral-400 whitespace-pre-wrap font-sans leading-relaxed">Hi Max,
+
+I noticed you engaged with Oscar's recent post about enterprise support teams using ElevenLabs.
+
+Connecting the dots: Trade Republic at 8M customers across 17 markets, the public feedback on support responsiveness, and your team's commitment to address it in 2026. Seems like the kind of problem where voice AI might actually move the needle—especially with multilingual requirements and regulatory constraints.
+
+Would you be open to a 20-minute call to explore fit?
+
+Best,
+Lia</pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 3 - Branching -->
+                                <div class="fade-in">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="flex items-center justify-center w-8 h-8 rounded-full bg-pink-500/10 border border-pink-500/20">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-400"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>
+                                        </div>
+                                        <span class="text-xs font-mono text-pink-400">5-6 days later</span>
+                                    </div>
+                                    <div class="ml-4 pl-7 border-l border-pink-500/20">
+                                        <div class="space-y-4">
+                                            <!-- Branch 1 -->
+                                            <div class="relative">
+                                                <div class="absolute -left-[29px] top-4 w-6 h-px bg-pink-500/20"></div>
+                                                <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-4 shadow-sm">
+                                                    <div class="flex items-center gap-2 mb-3">
+                                                        <span class="text-[10px] uppercase tracking-wider text-pink-400 bg-pink-500/10 px-2 py-0.5 rounded font-medium">If connected</span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0A66C2]"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                                    </div>
+                                                    <p class="text-xs text-neutral-200 mb-2 font-medium">Follow-up Message</p>
+                                                    <pre class="text-xs text-neutral-400 whitespace-pre-wrap font-sans leading-relaxed">Hi Max — following up on my email. One quick proof point: Adecco cut handle time by 40% with ElevenLabs while staying compliant across EU markets. Happy to share how they structured it if useful. If timing's off, no problem—happy to pick it back up whenever it makes sense.</pre>
+                                                </div>
+                                            </div>
+
+                                            <!-- Branch 2 -->
+                                            <div class="relative">
+                                                <div class="absolute -left-[29px] top-4 w-6 h-px bg-pink-500/20"></div>
+                                                <div class="bg-neutral-800 border border-neutral-700 rounded-lg p-4 shadow-sm">
+                                                    <div class="flex items-center gap-2 mb-3">
+                                                        <span class="text-[10px] uppercase tracking-wider text-pink-400 bg-pink-500/10 px-2 py-0.5 rounded font-medium">If not connected</span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-400"><rect x="3" y="4" width="18" height="16" rx="2" ry="2"></rect><polyline points="3 9 12 13 21 9"></polyline></svg>
+                                                    </div>
+                                                    <p class="text-xs text-neutral-200 mb-2 font-medium">Subject: Adecco's approach</p>
+                                                    <pre class="text-xs text-neutral-400 whitespace-pre-wrap font-sans leading-relaxed">Hi Max,
+
+Last note: Adecco cut average handle time by 40% using ElevenLabs for customer support—while staying compliant across EU markets.
+
+If that's relevant to what you're building, I can share a short breakdown of how they structured it. If the timing isn't right now but this becomes relevant later, I'm happy to pick it back up.
+
+Best,
+Lia</pre>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Automation Section - White -->
+        <section class="py-20 px-6 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <p class="text-xs text-blue-600 uppercase tracking-widest mb-4 font-medium">Automation</p>
+                <p class="text-neutral-600 mb-10 max-w-xl">
+                    How I'd operationalize this at scale.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-white to-purple-50/30 border border-neutral-200 rounded-xl p-6 hover:border-purple-200 transition-colors group">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center mb-4 group-hover:bg-purple-500 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-600 group-hover:text-white transition-colors"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                        </div>
+                        <h3 class="font-medium text-neutral-900 mb-2">Phantombuster</h3>
+                        <p class="text-sm text-neutral-500">
+                            Monitor LinkedIn engagement signals — post likes, comments, profile visits. Auto-trigger signal-based sequences.
+                        </p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-white to-cyan-50/30 border border-neutral-200 rounded-xl p-6 hover:border-cyan-200 transition-colors group">
+                        <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center mb-4 group-hover:bg-cyan-500 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-600 group-hover:text-white transition-colors"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </div>
+                        <h3 class="font-medium text-neutral-900 mb-2">Lemlist</h3>
+                        <p class="text-sm text-neutral-500">
+                            Email sequencing with built-in enrichment. Verify contacts, manage cadence, track opens and replies.
+                        </p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-white to-pink-50/30 border border-neutral-200 rounded-xl p-6 hover:border-pink-200 transition-colors group">
+                        <div class="w-10 h-10 rounded-lg bg-pink-500/10 flex items-center justify-center mb-4 group-hover:bg-pink-500 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-600 group-hover:text-white transition-colors"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                        </div>
+                        <h3 class="font-medium text-neutral-900 mb-2">Clay</h3>
+                        <p class="text-sm text-neutral-500">
+                            Data enrichment and trigger-based routing. Connect signals to sequences based on persona, company size, engagement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer - Black -->
+        <footer class="py-16 px-6 bg-black text-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div>
+                        <p class="text-xs text-purple-400 uppercase tracking-widest mb-4 font-medium">Sources</p>
+                        <ul class="space-y-2 text-sm text-neutral-400">
+                            <li>
+                                <a href="https://www.businesswire.com/news/home/20250108855357/en/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors flex items-center gap-1">
+                                    Trade Republic 8M customers — Business Wire
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://eulerpool.com/en/news/business/trade-republic-faces-criticism-over-customer-service" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors flex items-center gap-1">
+                                    VZBV complaints +133% — Eulerpool
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://elevenlabs.io/agents/ai-customer-support" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition-colors flex items-center gap-1">
+                                    ElevenLabs customer support benchmarks
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p class="text-xs text-pink-400 uppercase tracking-widest mb-4 font-medium">Note on metrics</p>
+                        <p class="text-sm text-neutral-400">
+                            The 40% handle time reduction is from ElevenLabs' published benchmarks. Adecco is cited as a proof point for regulated enterprise adoption. Before sending live, I'd validate Adecco-specific results with internal case studies.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-16 pt-8 border-t border-neutral-800 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <div class="flex gap-[3px]">
+                            <div class="w-[3px] h-5 bg-gradient-to-b from-blue-400 to-purple-400 rounded-full"></div>
+                            <div class="w-[3px] h-5 bg-gradient-to-b from-purple-400 to-pink-400 rounded-full"></div>
+                        </div>
+                        <span class="text-xs text-neutral-500 ml-2">Built for ElevenLabs SDR interview · January 2025</span>
+                    </div>
+                    <a href="https://www.linkedin.com/in/lia-hofmann-2945a2229/" target="_blank" rel="noopener noreferrer" class="text-neutral-500 hover:text-purple-400 transition-colors flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let activeSequence = null;
+
+        function toggleSequence(type) {
+            const panel = document.getElementById(`${type}-panel`);
+            const content = document.getElementById(`${type}-content`);
+            const chevron = document.getElementById(`${type}-chevron`);
+
+            if (activeSequence === type) {
+                // Close this sequence
+                content.classList.add('hidden');
+                chevron.classList.remove('rotate-180');
+                panel.classList.remove(type === 'cold' ? 'bg-gradient-to-br' : 'bg-gradient-to-br');
+                panel.classList.remove(type === 'cold' ? 'from-neutral-900' : 'from-neutral-900');
+                panel.classList.remove(type === 'cold' ? 'to-cyan-900/30' : 'to-pink-900/30');
+                panel.classList.remove(type === 'cold' ? 'border-cyan-500' : 'border-pink-500');
+                panel.classList.add('bg-neutral-900', 'border-neutral-700');
+                activeSequence = null;
+            } else {
+                // Close other sequence if open
+                if (activeSequence) {
+                    const otherType = activeSequence;
+                    const otherContent = document.getElementById(`${otherType}-content`);
+                    const otherChevron = document.getElementById(`${otherType}-chevron`);
+                    const otherPanel = document.getElementById(`${otherType}-panel`);
+
+                    otherContent.classList.add('hidden');
+                    otherChevron.classList.remove('rotate-180');
+                    otherPanel.classList.remove('bg-gradient-to-br');
+                    otherPanel.classList.remove(otherType === 'cold' ? 'from-neutral-900' : 'from-neutral-900');
+                    otherPanel.classList.remove(otherType === 'cold' ? 'to-cyan-900/30' : 'to-pink-900/30');
+                    otherPanel.classList.remove(otherType === 'cold' ? 'border-cyan-500' : 'border-pink-500');
+                    otherPanel.classList.add('bg-neutral-900', 'border-neutral-700');
+                }
+
+                // Open this sequence
+                content.classList.remove('hidden');
+                chevron.classList.add('rotate-180');
+                panel.classList.remove('bg-neutral-900', 'border-neutral-700');
+                panel.classList.add('bg-gradient-to-br');
+                panel.classList.add('from-neutral-900');
+                panel.classList.add(type === 'cold' ? 'to-cyan-900/30' : 'to-pink-900/30');
+                panel.classList.add(type === 'cold' ? 'border-cyan-500' : 'border-pink-500');
+                activeSequence = type;
+            }
+        }
+    </script>
+</body>
+</html>
